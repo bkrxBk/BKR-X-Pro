@@ -1,5 +1,3 @@
-import "./App.css";
-
 function App() {
   return (
     <div className="app">
@@ -19,14 +17,14 @@ function App() {
           <div className="item">🎥 Video Generator</div>
           <div className="item">🎤 Voice AI</div>
           <div className="item">📚 Prompt Library</div>
-          <div className="item">⚙ Settings</div>
+          <div className="item">⚙️ Settings</div>
         </div>
       </aside>
 
       <main className="main">
 
         <header className="header">
-          <h1>BKR AI Pro</h1>
+          <h1>🚀 BKR AI Pro</h1>
           <p>Your Personal AI Assistant</p>
         </header>
 
