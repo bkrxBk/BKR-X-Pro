@@ -1,3 +1,5 @@
+import "./App.css";
+
 function App() {
   return (
     <div className="app">
@@ -61,7 +63,6 @@ function App() {
           </div>
 
           <div className="inputArea">
-
             <input
               type="text"
               placeholder="Ask anything..."
@@ -70,7 +71,6 @@ function App() {
             <button>
               Send
             </button>
-
           </div>
 
         </section>
