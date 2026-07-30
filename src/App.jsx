@@ -1,6 +1,42 @@
+import { useState } from "react";
 import "./App.css";
+import { askGemini } from "./services/gemini";
+function App() {const [input, setInput] = useState("");
+const [messages, setMessages] = useState([
+  {
+    role: "assistant",
+    text: "👋 Welcome to BKR AI Pro. How can I help you today?"
+  }
+]);
+const handleSend = async () => {
+  if (!input.trim()) return;
 
-function App() {
+  const userMessage = input;
+
+  setMessages((prev) => [
+    ...prev,
+    { role: "user", text: userMessage }
+  ]);
+
+  setInput("");
+
+  try {
+    const reply = await askGemini(userMessage);
+
+    setMessages((prev) => [
+      ...prev,
+      { role: "assistant", text: reply }
+    ]);
+  } catch (error) {
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "assistant",
+        text: "❌ Error: " + error.message
+      }
+    ]);
+  }
+};
   return (
     <div className="app">
 
